@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
+
 import Friend from './Friend';
 
 
@@ -83,9 +86,17 @@ const FriendsList = () => {
             </div>
             
             <div className='friends-container'>
-            {friends.map(friend => (
-                <Friend name={friend.name} key={friend.id} age={friend.age} email={friend.email} />
-            ))}
+            {
+        !friends.length ? (
+            <div className="loader">
+                <Loader type="TailSpin" color="black" height={80} width={80} />
+            </div>
+        ) : (
+          friends.map(friend => (
+            <Friend name={friend.name} key={friend.id} age={friend.age} email={friend.email} />
+          ))
+        )
+    }
             </div>
             
         </div>
