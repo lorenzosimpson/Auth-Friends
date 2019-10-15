@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import components
@@ -9,10 +9,24 @@ import FriendsList from './components/FriendsList';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Login />
-    </div>
+    <Router>
+      <div className="App">
+        <ul>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/protected">Protected Page</Link>
+            </li>
+          </ul>
+        <Switch>
+          <Route path='/login' component={Login}/>
+          <Route path='/protected' component={FriendsList}/>
+          <Route component={Login} />
+        </Switch>
+      </div>
+    </Router>
+    
   );
 }
 
