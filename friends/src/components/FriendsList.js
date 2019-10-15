@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import axios from 'axios';
 
 import Friend from './Friend';
 
@@ -26,10 +27,16 @@ const FriendsList = () => {
         })
         console.log(newFriend)
     }
+
+    const submitForm = e => {
+        axiosWithAuth()
+        .post('/api/friends', newFriend)
+        .then(res => console.log(res))
+    }
     
     return (
         <div className='friends-list'>
-            <form>
+            <form onSubmit={submitForm}>
                 <input type='text' name='name' placeholder='Name' value={newFriend.name} onChange={handleChange}/>
                 <input type='text' name='age' placeholder='Age' value={newFriend.age} onChange={handleChange}/>
                 <input type='text' name='email' placeholder='Email' value={newFriend.email} onChange={handleChange}/>
