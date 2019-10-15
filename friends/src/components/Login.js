@@ -24,8 +24,10 @@ const Login = props => {
             console.log(res)
             localStorage.setItem('token', res.data.payload)
         })
+        .catch(err => console.log(err.response))
 
     }
+    
     console.log(credentials)
     return (
         <div className='login'>
