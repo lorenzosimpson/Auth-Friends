@@ -1,0 +1,17 @@
+.friends-list-c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .form-container {
+        
+    }
+
+    .friends-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90vw;
+    }
+
+}
