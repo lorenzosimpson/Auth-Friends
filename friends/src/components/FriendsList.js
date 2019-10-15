@@ -31,9 +31,15 @@ const FriendsList = () => {
     const submitForm = e => {
         axiosWithAuth()
         .post('/api/friends', newFriend)
-        .then(res => console.log(res))
+        .then(res => {
+            setFriends({
+                ...friends,
+                newFriend
+            })
+            console.log(friends, 'friends arr')
+        }
+        )
     }
-    
     return (
         <div className='friends-list'>
             <form onSubmit={submitForm}>
