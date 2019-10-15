@@ -52,8 +52,9 @@ const FriendsList = () => {
             
 
         <Form onSubmit={submitForm}>
+            <p>Add a friend</p>
         <FormGroup row>
-          <Label for="Name" sm={2}>Email</Label>
+          <Label for="Name" sm={2}>Name</Label>
           <Col sm={10}>
             <Input type='text' name='name' placeholder='Name' value={newFriend.name} onChange={handleChange} />
           </Col>
@@ -67,7 +68,7 @@ const FriendsList = () => {
         </FormGroup>
 
         <FormGroup row>
-          <Label for="name" sm={2}>Age</Label>
+          <Label for="name" sm={2}>Email</Label>
           <Col sm={10}>
             <Input type='text' name='email' placeholder='Email' value={newFriend.email} onChange={handleChange}/>
           </Col>
@@ -75,7 +76,7 @@ const FriendsList = () => {
         
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button>Submit</Button>
+            <Button>Add Friend</Button>
           </Col>
         </FormGroup>
       </Form>

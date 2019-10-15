@@ -4,7 +4,15 @@
     justify-content: center;
     align-items: center;
     .form-container {
-        
+        border: 1px solid lightgray;
+        padding: 3%;
+        p {
+            margin-left: 50px;
+        }
+
+        .form {
+            margin-right: 30px;
+        }
     }
 
     .friends-container {

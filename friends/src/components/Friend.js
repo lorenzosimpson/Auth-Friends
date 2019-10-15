@@ -8,7 +8,7 @@ const Friend = (props) => {
         <CardTitle className='title'>{props.name}</CardTitle>
         <CardText>{props.age}</CardText>
         <CardText>{props.email}</CardText>
-        <Button>Say Hi</Button>
+        <Button>Say hi</Button>
       </Card>
     </div>
   );

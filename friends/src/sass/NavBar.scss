@@ -1,5 +1,6 @@
 .navbar {
-    background: lightblue;
+    background: #4267b2;
+    color: white;
 
     h1 {
         margin: 0;
@@ -15,6 +16,10 @@
 
         li {
             padding-right: 30px;
+
+            a {
+                color: white;
+            }
         }
     }
 }
